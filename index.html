@@ -1,0 +1,351 @@
+```html name=responsive-portfolio.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Portfolio Website</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="#home" class="logo">Muhammad <span>Huzaifa</span></a>
+    <i class="bx bx-menu" id="menu-icon" aria-hidden="true"></i>
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#education">Education</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#hire-me">Hire me</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="home" id="home">
+      <div class="container">
+        <div class="row home-row">
+          <div class="col-md-6 home-column home-text">
+            <div class="home-content">
+              <h1>Hi It's <span>Huzaifa</span></h1>
+              <h3 class="text-animation">I'm a <span class="dynamic-text" aria-live="polite"></span></h3>
+              <p>
+                A student in class 8, front-end designer, YouTuber and AI voiceover / image / video creator.
+                I also make banners and logos. I enjoy building small projects and learning every day.
+              </p>
+
+              <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100093053934889" aria-label="Facebook"><i
+                    class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/dyk_.huzaifa/" aria-label="Instagram"><i
+                    class="bx bxl-instagram"></i></a>
+                <a href="https://github.com/MuhammadHuzaifaOwais-7" aria-label="Github"><i
+                    class="bx bxl-github"></i></a>
+                <a href="https://x.com/dyk_huzaifa" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+              </div>
+              <br>
+
+              <div class="btn-group">
+                <a href="#hire-me" class="btn">Hire</a>
+                <a href="#contact" class="btn invert">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 home-column home-image">
+            <div class="home-img" aria-hidden="true">
+              <div class="mock">
+                <img src="images/image.jpg" alt="Photo of Muhammad Huzaifa" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION / TIMELINE -->
+    <section class="education" id="education">
+      <h2 class="heading">Education</h2>
+
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-year">2020</span>
+          </div>
+          <div class="timeline-content left">
+            <h3>Primary</h3>
+            <p>Successfully completed primary education with a 90% score and consistent top rankings.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-year">2024</span>
+          </div>
+          <div class="timeline-content left">
+            <h3>Diploma</h3>
+            <p>Started a diploma in Software Engineering (completed 1st semester). Will continue after Matric.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-year">2025</span>
+          </div>
+          <div class="timeline-content right">
+            <h3>High School / Secondary</h3>
+            <p>Currently pursuing high school studies while enhancing technical skills in design and development.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <span class="timeline-year">2026</span>
+          </div>
+          <div class="timeline-content right">
+            <h3>Projects</h3>
+            <p>
+              I have completed several projects. View them on my GitHub:
+
+
+            </p><a class="edu-project-link" href="https://github.com/MuhammadHuzaifaOwais-7" target="_blank"
+              rel="noopener">
+              View projects <i class="bx bx-link-external"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <h2 class="heading">Services</h2>
+      <div class="services-container">
+        <div class="service-box">
+          <h4>Front-end developer</h4>
+          <div class="service-info">
+            <p>I build modern, responsive and interactive websites optimized for performance and accessibility.</p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <h4>UI / UX designer</h4>
+          <div class="service-info">
+            <p>I design user-friendly interfaces through research, wireframes and prototypes for better engagement.</p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <h4>Logo designer</h4>
+          <div class="service-info">
+            <p>I design memorable logos that match brand identity and scale for print and digital use.</p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <h4>Banner designer</h4>
+          <div class="service-info">
+            <p>Eye-catching banners for web and social that help brands stand out.</p>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-box">
+        <h2 class="heading">Testimonials</h2>
+        <div class="wrapper">
+          <div class="testimonial-item">
+            <img src="images/Image 1.jpg" alt="Client 1" />
+            <h2>Aisha Ansari</h2>
+            <div class="rating" aria-hidden="true">
+              <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            </div>
+            <p>"Great experience working with Huzaifa! The AI-generated content was impressive."</p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="images/Image 2.jpg" alt="Client 2" />
+            <h2>M.Ismail</h2>
+            <div class="rating" aria-hidden="true">
+              <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            </div>
+            <p>"Huzaifa delivered an outstanding website for my business. Highly recommend!"</p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="images/Image 3.jpg" alt="Client 3" />
+            <h2>Mahnoor Mirza</h2>
+            <div class="rating" aria-hidden="true">
+              <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i
+                class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            </div>
+            <p>"His design skills are top-notch, and he perfectly understood my requirements."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <h2 class="heading" id="faq-heading">Frequently Asked Questions</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What services do you offer?
+              <i class="bx bx-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>I offer front-end development, UI/UX design, AI voiceovers, AI video and image creation, logo/banner
+                design, and article writing. I can also build simple websites and landing pages.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How can I hire you for a project?
+              <i class="bx bx-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>You can use the Hire Me form on this page or contact me directly on WhatsApp (button at bottom-right)
+                to discuss project scope, timeline and pricing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you provide revisions?
+              <i class="bx bx-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Yes. Most design and development packages include a set number of revisions — we’ll agree details when
+                discussing the project.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What are your typical delivery times?
+              <i class="bx bx-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Delivery depends on the project size. Small tasks (logos, banners) usually take a few days; websites
+                and larger projects take 1–4 weeks depending on scope.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Which payments do you accept?
+              <i class="bx bx-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>I accept payments via bank transfer or other methods we agree on. We'll provide payment details once we
+                finalize the project terms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: uses JS mailto (contact-form) -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form id="contact-form" novalidate>
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="input-box">
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="text" name="subject" placeholder="Subject" />
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea name="message" cols="30" rows="8" placeholder="Your Message"></textarea>
+          <input type="submit" value="Send Message" class="btn" />
+        </div>
+      </form>
+    </section>
+
+    <!-- HIRE: uses JS mailto (hire-form) -->
+    <section class="hire-me" id="hire-me">
+      <h2 class="heading">Hire <span>Me</span></h2>
+      <form id="hire-form" novalidate>
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" name="client_name" placeholder="Your Name" required />
+            <input type="email" name="client_email" placeholder="Your Email" required />
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="company" placeholder="Company Name" />
+            <input type="text" name="position" placeholder="Position or role" required />
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea name="project_details" cols="30" rows="8" placeholder="Project Details" required></textarea>
+          <input type="submit" value="Submit Inquiry" class="btn" />
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/muhammad-huzaifa-owais-770518290/" aria-label="LinkedIn"
+          class="social-circle"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100093053934889" aria-label="Facebook" class="social-circle"><i
+            class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/dyk_.huzaifa/" aria-label="Instagram" class="social-circle"><i
+            class="bx bxl-instagram"></i></a>
+        <a href="https://x.com/dyk_huzaifa" aria-label="Twitter" class="social-circle"><i
+            class="bx bxl-twitter"></i></a>
+        <a href="https://github.com/MuhammadHuzaifaOwais-7" aria-label="Github"><i
+            class="bx bxl-github social-circle"></i></a>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#services" class="footer-link">Services</a>
+        <a href="#home" class="footer-link">About Me</a>
+        <a href="#contact" class="footer-link">Contact</a>
+        <a href="#testimonials" class="footer-link">Testimonials</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">© Muhammad Huzaifa | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating chat button: data-phone set to your number -->
+  <a id="whatsapp-chat" class="whatsapp-chat" href="#" data-phone="923326193848"
+    data-text="Hello Huzaifa! I want to talk about a project." target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp">
+    <i class="bx bxl-whatsapp"></i>
+  </a>
+<!-- add this instead, just before your js/script.js include -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
