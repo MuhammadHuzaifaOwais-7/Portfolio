@@ -237,3 +237,93 @@ document.addEventListener("DOMContentLoaded", function () {
      End of DOMContentLoaded
      ========================= */
 });
+// Site loader controller
+// Place this script near the top of your main JS (or as a separate file included before other heavy scripts).
+// It needs the HTML element with id="site-loader" you already added.
+// It will:
+//  - keep loader visible at least MIN_SHOW_MS
+//  - hide on window.load (or after MAX_WAIT_MS fallback)
+//  - add body overflow:hidden while loader is visible to prevent scroll
+//  - add the CSS class "fade-out" to trigger your CSS transition, then remove the node
+//  - respect prefers-reduced-motion (minimize animations if requested)
+
+(function () {
+  const LOADER_ID = "site-loader";
+  const MIN_SHOW_MS = 600;    // minimum time to show loader (ms)
+  const MAX_WAIT_MS = 10000;  // fallback hide after this many ms if load doesn't fire
+
+  const loader = document.getElementById(LOADER_ID);
+  if (!loader) return;
+
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const start = Date.now();
+
+  // lock scroll while loader is visible
+  const prevBodyOverflow = document.body.style.overflow;
+  document.body.style.overflow = "hidden";
+
+  // mark loader visible for screen readers
+  loader.setAttribute("aria-hidden", "false");
+
+  let hidden = false;
+  function doHide() {
+    if (hidden) return;
+    hidden = true;
+
+    // restore scrolling
+    document.body.style.overflow = prevBodyOverflow || "";
+
+    // mark for assistive tech
+    loader.setAttribute("aria-hidden", "true");
+
+    // If user prefers reduced motion, remove immediately without transition
+    if (prefersReduced) {
+      if (loader.parentNode) loader.parentNode.removeChild(loader);
+      return;
+    }
+
+    // add class that triggers CSS fade (your CSS uses .fade-out)
+    loader.classList.add("fade-out");
+
+    // remove element after transition completes (or force remove after 800ms)
+    const cleanup = () => {
+      if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+    };
+
+    // Listen for transitionend; otherwise fallback removal
+    const onTransitionEnd = (e) => {
+      // ensure it's the opacity/visibility transition
+      if (e.target === loader) {
+        cleanup();
+        loader.removeEventListener("transitionend", onTransitionEnd);
+      }
+    };
+    loader.addEventListener("transitionend", onTransitionEnd);
+
+    // safety fallback
+    setTimeout(() => {
+      if (document.getElementById(LOADER_ID)) cleanup();
+    }, 900);
+  }
+
+  // Public hook: allow manual hide from other scripts
+  window.hideSiteLoader = doHide;
+
+  // Hide when the page finishes loading
+  function onLoadHide() {
+    const elapsed = Date.now() - start;
+    const wait = Math.max(0, MIN_SHOW_MS - elapsed);
+    setTimeout(doHide, wait);
+  }
+  window.addEventListener("load", onLoadHide, { once: true });
+
+  // Fallback: ensure loader doesn't block forever
+  setTimeout(() => {
+    if (!hidden) doHide();
+  }, MAX_WAIT_MS);
+
+  // If DOM was already loaded and load event already fired, try to hide quickly
+  if (document.readyState === "complete") {
+    onLoadHide();
+  }
+})();
